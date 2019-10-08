@@ -1,0 +1,17 @@
+C:\Users\v_dva\source\repos\Magtifun2\Magtifun2\bin\Debug\Magtifun2.exe.config
+C:\Users\v_dva\source\repos\Magtifun2\Magtifun2\bin\Debug\Magtifun2.exe
+C:\Users\v_dva\source\repos\Magtifun2\Magtifun2\bin\Debug\Magtifun2.pdb
+C:\Users\v_dva\source\repos\Magtifun2\Magtifun2\bin\Debug\WebDriver.dll
+C:\Users\v_dva\source\repos\Magtifun2\Magtifun2\bin\Debug\WebDriver.Support.dll
+C:\Users\v_dva\source\repos\Magtifun2\Magtifun2\bin\Debug\WebDriver.xml
+C:\Users\v_dva\source\repos\Magtifun2\Magtifun2\bin\Debug\WebDriver.Support.xml
+C:\Users\v_dva\source\repos\Magtifun2\Magtifun2\obj\Debug\Magtifun2.csprojAssemblyReference.cache
+C:\Users\v_dva\source\repos\Magtifun2\Magtifun2\obj\Debug\Magtifun2.Form1.resources
+C:\Users\v_dva\source\repos\Magtifun2\Magtifun2\obj\Debug\Magtifun2.Properties.Resources.resources
+C:\Users\v_dva\source\repos\Magtifun2\Magtifun2\obj\Debug\Magtifun2.csproj.GenerateResource.cache
+C:\Users\v_dva\source\repos\Magtifun2\Magtifun2\obj\Debug\Magtifun2.csproj.CoreCompileInputs.cache
+C:\Users\v_dva\source\repos\Magtifun2\Magtifun2\obj\Debug\Magtifun2.csproj.CopyComplete
+C:\Users\v_dva\source\repos\Magtifun2\Magtifun2\obj\Debug\Magtifun2.exe
+C:\Users\v_dva\source\repos\Magtifun2\Magtifun2\obj\Debug\Magtifun2.pdb
+C:\Users\v_dva\source\repos\Magtifun2\Magtifun2\bin\Debug\CircularProgressBar.dll
+C:\Users\v_dva\source\repos\Magtifun2\Magtifun2\bin\Debug\WinFormAnimation.dll
