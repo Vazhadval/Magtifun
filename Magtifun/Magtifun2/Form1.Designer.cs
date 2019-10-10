@@ -37,7 +37,7 @@
             this.txtReceiver = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtMessage = new System.Windows.Forms.TextBox();
-            this.progressBar1 = new System.Windows.Forms.ProgressBar();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.lblSmsLeft = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
@@ -125,13 +125,13 @@
             this.txtMessage.Size = new System.Drawing.Size(188, 96);
             this.txtMessage.TabIndex = 4;
             // 
-            // progressBar1
+            // progressBar
             // 
-            this.progressBar1.Location = new System.Drawing.Point(15, 303);
-            this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(188, 54);
-            this.progressBar1.TabIndex = 0;
-            this.progressBar1.Visible = false;
+            this.progressBar.Location = new System.Drawing.Point(15, 303);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(188, 54);
+            this.progressBar.TabIndex = 0;
+            this.progressBar.Visible = false;
             // 
             // lblSmsLeft
             // 
@@ -149,7 +149,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(215, 371);
             this.Controls.Add(this.lblSmsLeft);
-            this.Controls.Add(this.progressBar1);
+            this.Controls.Add(this.progressBar);
             this.Controls.Add(this.txtMessage);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtReceiver);
@@ -180,7 +180,7 @@
         private System.Windows.Forms.TextBox txtReceiver;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtMessage;
-        private System.Windows.Forms.ProgressBar progressBar1;
+        private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Label lblSmsLeft;
     }
 }
