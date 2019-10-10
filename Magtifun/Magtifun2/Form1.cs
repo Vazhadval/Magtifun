@@ -52,6 +52,7 @@ namespace Magtifun2
 
                         LoginToMagtifun(txtUsername.Text, txtPassword.Text, driver, progressBar1, lblSmsLeft);
                         SendSMS(txtReceiver.Text, txtMessage.Text, driver, progressBar1);
+
                         progressBar1.Value = 100;
                         MessageBox.Show("Message sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         progressBar1.Visible = false;
@@ -62,8 +63,9 @@ namespace Magtifun2
                 catch (Exception)
 
                 {
-                    MessageBox.Show("Please make sure you filled all fields and credentials are correct.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show("Please make sure you filled all fields and credentials are correct", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     progressBar1.Visible = false;
+                    progressBar1.Value = 0;
                     btnSend.Enabled = true;
 
                 }
