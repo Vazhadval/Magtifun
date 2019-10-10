@@ -60,6 +60,7 @@ namespace Magtifun2
                     }
                 }
                 catch (Exception)
+
                 {
                     MessageBox.Show("Please make sure you filled all fields and credentials are correct.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     progressBar1.Visible = false;
