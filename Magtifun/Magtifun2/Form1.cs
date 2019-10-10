@@ -20,42 +20,57 @@ namespace Magtifun2
         {
             InitializeComponent();
         }
-
+        
         private void btnSend_Click(object sender, EventArgs e)
         {
-            btnSend.Enabled = false;
-            progressBar1.Visible = true;
+            progressBar1.Maximum = 100;
+            progressBar1.Step = 10;
 
-            var chromeOptions = new ChromeOptions();
-            chromeOptions.AddArguments(new List<string>() {
+
+            if (!string.IsNullOrEmpty(txtUsername.Text) && !string.IsNullOrEmpty(txtPassword.Text) && !string.IsNullOrEmpty(txtReceiver.Text) && !string.IsNullOrEmpty(txtMessage.Text))
+            {
+                progressBar1.PerformStep();
+                btnSend.Enabled = false;
+                progressBar1.Visible = true;
+
+                var chromeOptions = new ChromeOptions();
+                chromeOptions.AddArguments(new List<string>() {
                  "--silent-launch",
                  "--no-startup-window",
                  "no-sandbox",
                  "headless",});
 
-            var chromeDriverService = ChromeDriverService.CreateDefaultService();
-            chromeDriverService.HideCommandPromptWindow = true;    // This is to hidden the console.
-
-            try
-            {
-                using (ChromeDriver driver = new ChromeDriver(chromeDriverService, chromeOptions))
+                var chromeDriverService = ChromeDriverService.CreateDefaultService();
+                chromeDriverService.HideCommandPromptWindow = true;    // This is to hidden the console.
+                progressBar1.PerformStep();
+                try
                 {
-                    driver.Navigate().GoToUrl("http://www.magtifun.ge/");
+                    using (ChromeDriver driver = new ChromeDriver(chromeDriverService, chromeOptions))
+                    {
+                        driver.Navigate().GoToUrl("http://www.magtifun.ge/");
+                        progressBar1.PerformStep();
 
-                    LoginToMagtifun(txtUsername.Text, txtPassword.Text, driver, progressBar1, lblSmsLeft);
-                    SendSMS(txtReceiver.Text, txtMessage.Text, driver, progressBar1);
-                    progressBar1.Value = 100;
-                    MessageBox.Show("Message sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    progressBar1.Visible = false;
-                    progressBar1.Value = 0;
-                    btnSend.Enabled = true;
+                        LoginToMagtifun(txtUsername.Text, txtPassword.Text, driver, progressBar1, lblSmsLeft);
+                        SendSMS(txtReceiver.Text, txtMessage.Text, driver, progressBar1);
+                        progressBar1.Value = 100;
+                        MessageBox.Show("Message sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        progressBar1.Visible = false;
+                        progressBar1.Value = 0;
+                        btnSend.Enabled = true;
+                    }
                 }
+                catch (Exception)
+                {
+                    MessageBox.Show("Please make sure you filled all fields and credentials are correct.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    progressBar1.Visible = false;
+                    btnSend.Enabled = true;
+
+                }
+
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
-                progressBar1.Visible = false;
-                btnSend.Enabled = true;
+                MessageBox.Show("Please make sure you filled all fields and credentials are correct.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             }
 
@@ -67,17 +82,22 @@ namespace Magtifun2
         static void LoginToMagtifun(string username, string password, IWebDriver driver, ProgressBar progress, Label label)
         {
             driver.FindElement(By.Id("user")).SendKeys(username);
+            progress.PerformStep();
             driver.FindElement(By.Id("password")).SendKeys(password);
+            progress.PerformStep();
             driver.FindElement(By.CssSelector("input[type='submit']")).Click();
+            progress.PerformStep();
             label.Text = "SMS Left: " + (Convert.ToInt32(driver.FindElement(By.CssSelector("span[class='xxlarge dark english']")).Text) - 1).ToString();
-
+            progress.PerformStep();
         }
         static void SendSMS(string receiver, string sms, IWebDriver driver, ProgressBar progress)
         {
-            Thread.Sleep(100);
             driver.FindElement(By.Id("recipient")).SendKeys(receiver);
+            progress.PerformStep();
             driver.FindElement(By.Id("message_body")).SendKeys(sms);
+            progress.PerformStep();
             driver.FindElement(By.CssSelector("input[type='submit']")).Click();
+            progress.PerformStep();
         }
 
     }
