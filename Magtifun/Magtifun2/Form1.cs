@@ -48,7 +48,6 @@ namespace Magtifun2
 
                         progressBar.Value = 100;
                         MessageBox.Show("Message sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        progressBar.Visible = false;
                         progressBar.Value = 0;
                         btnSend.Enabled = true;
                     }
@@ -57,7 +56,6 @@ namespace Magtifun2
 
                 {
                     MessageBox.Show("Please make sure you filled all fields and credentials are correct", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    progressBar.Visible = false;
                     progressBar.Value = 0;
                     btnSend.Enabled = true;
 

@@ -62,7 +62,7 @@
             // btnSend
             // 
             this.btnSend.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSend.Location = new System.Drawing.Point(15, 303);
+            this.btnSend.Location = new System.Drawing.Point(15, 323);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(188, 54);
             this.btnSend.TabIndex = 5;
@@ -129,9 +129,8 @@
             // 
             this.progressBar.Location = new System.Drawing.Point(15, 303);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(188, 54);
+            this.progressBar.Size = new System.Drawing.Size(188, 14);
             this.progressBar.TabIndex = 0;
-            this.progressBar.Visible = false;
             // 
             // lblSmsLeft
             // 
@@ -147,7 +146,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(215, 371);
+            this.ClientSize = new System.Drawing.Size(215, 378);
             this.Controls.Add(this.lblSmsLeft);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.txtMessage);
