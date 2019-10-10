@@ -24,7 +24,6 @@ namespace Magtifun2
             {
                 progressBar.PerformStep();
                 btnSend.Enabled = false;
-                progressBar.Visible = true;
 
                 var chromeOptions = new ChromeOptions();
                 chromeOptions.AddArguments(new List<string>() {
@@ -40,41 +39,36 @@ namespace Magtifun2
                 {
                     using (ChromeDriver driver = new ChromeDriver(chromeDriverService, chromeOptions))
                     {
-                        driver.Navigate().GoToUrl("http://www.magtifun.ge/");
-                        progressBar.PerformStep();
 
                         LoginToMagtifun(txtUsername.Text, txtPassword.Text, driver, progressBar, lblSmsLeft);
                         SendSMS(txtReceiver.Text, txtMessage.Text, driver, progressBar);
 
-                        progressBar.Value = 100;
+                        
                         MessageBox.Show("Message sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         progressBar.Value = 0;
                         btnSend.Enabled = true;
                     }
                 }
                 catch (Exception)
-
                 {
                     MessageBox.Show("Please make sure you filled all fields and credentials are correct", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     progressBar.Value = 0;
                     btnSend.Enabled = true;
-
                 }
-
             }
             else
             {
                 MessageBox.Show("Please make sure you filled all fields and credentials are correct.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
             }
-
-
         }
 
 
 
         static void LoginToMagtifun(string username, string password, IWebDriver driver, ProgressBar progressBar, Label smsLeftLabel)
         {
+            driver.Navigate().GoToUrl("http://www.magtifun.ge/");
+            progressBar.PerformStep();
             driver.FindElement(By.Id("user")).SendKeys(username);
             progressBar.PerformStep();
             driver.FindElement(By.Id("password")).SendKeys(password);
@@ -91,7 +85,7 @@ namespace Magtifun2
             driver.FindElement(By.Id("message_body")).SendKeys(sms);
             progressBar.PerformStep();
             driver.FindElement(By.CssSelector("input[type='submit']")).Click();
-            progressBar.PerformStep();
+            progressBar.Value = 100;
         }
 
     }
