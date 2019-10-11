@@ -16,11 +16,10 @@ namespace Magtifun2
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            progressBar.Maximum = 100;
-            progressBar.Step = 10;
-
-
-            if (!string.IsNullOrEmpty(txtUsername.Text) && !string.IsNullOrEmpty(txtPassword.Text) && !string.IsNullOrEmpty(txtReceiver.Text) && !string.IsNullOrEmpty(txtMessage.Text))
+            if (!string.IsNullOrEmpty(txtUsername.Text) &&
+                !string.IsNullOrEmpty(txtPassword.Text) &&
+                !string.IsNullOrEmpty(txtReceiver.Text) &&
+                !string.IsNullOrEmpty(txtMessage.Text))
             {
                 progressBar.PerformStep();
                 btnSend.Enabled = false;
@@ -90,7 +89,31 @@ namespace Magtifun2
 
         private void TxtMessage_TextChanged(object sender, EventArgs e)
         {
-            lblInputSize.Text = $"Input: {txtMessage.Text.Length.ToString()}";
+            int smsTextCharCount = txtMessage.Text.Length;
+            lblInputSize.Text = $"Input: {smsTextCharCount.ToString()}";
+
+            if (smsTextCharCount > 0 && smsTextCharCount <= 146)
+            {
+                lblSmsCount.Text = "Will be sent: 1 sms";
+            }
+            else if (smsTextCharCount > 146 && smsTextCharCount <= 292)
+            {
+                lblSmsCount.Text = "Will be sent: 2 sms";
+            }
+            else
+            {
+                lblSmsCount.Text = "Will be sent: 3 sms";
+            }
+
+        }
+
+        private void TxtUsername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+
+            {
+                e.Handled = true;
+            }
         }
     }
 }

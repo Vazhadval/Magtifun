@@ -41,6 +41,8 @@
             this.lblSmsLeft = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.lblInputSize = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.lblSmsCount = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -55,19 +57,20 @@
             // 
             // txtUsername
             // 
-            this.txtUsername.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtUsername.Location = new System.Drawing.Point(103, 8);
+            this.txtUsername.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(145, 8);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(100, 23);
+            this.txtUsername.Size = new System.Drawing.Size(144, 26);
             this.txtUsername.TabIndex = 1;
+            this.txtUsername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtUsername_KeyPress);
             // 
             // btnSend
             // 
             this.btnSend.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSend.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnSend.Location = new System.Drawing.Point(15, 286);
+            this.btnSend.Location = new System.Drawing.Point(12, 381);
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(188, 54);
+            this.btnSend.Size = new System.Drawing.Size(277, 54);
             this.btnSend.TabIndex = 5;
             this.btnSend.Text = "SEND";
             this.btnSend.UseVisualStyleBackColor = true;
@@ -85,11 +88,11 @@
             // 
             // txtPassword
             // 
-            this.txtPassword.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPassword.Location = new System.Drawing.Point(103, 37);
+            this.txtPassword.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(145, 37);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(100, 23);
+            this.txtPassword.Size = new System.Drawing.Size(144, 26);
             this.txtPassword.TabIndex = 2;
             // 
             // label3
@@ -104,11 +107,12 @@
             // 
             // txtReceiver
             // 
-            this.txtReceiver.Font = new System.Drawing.Font("Comic Sans MS", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtReceiver.Location = new System.Drawing.Point(103, 66);
+            this.txtReceiver.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtReceiver.Location = new System.Drawing.Point(145, 66);
             this.txtReceiver.Name = "txtReceiver";
-            this.txtReceiver.Size = new System.Drawing.Size(100, 23);
+            this.txtReceiver.Size = new System.Drawing.Size(144, 26);
             this.txtReceiver.TabIndex = 3;
+            this.txtReceiver.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtUsername_KeyPress);
             // 
             // label4
             // 
@@ -122,20 +126,21 @@
             // 
             // txtMessage
             // 
-            this.txtMessage.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtMessage.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMessage.Location = new System.Drawing.Point(15, 132);
             this.txtMessage.MaxLength = 438;
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
-            this.txtMessage.Size = new System.Drawing.Size(188, 96);
+            this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.txtMessage.Size = new System.Drawing.Size(274, 144);
             this.txtMessage.TabIndex = 4;
             this.txtMessage.TextChanged += new System.EventHandler(this.TxtMessage_TextChanged);
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(15, 266);
+            this.progressBar.Location = new System.Drawing.Point(12, 352);
             this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(188, 14);
+            this.progressBar.Size = new System.Drawing.Size(277, 23);
             this.progressBar.TabIndex = 0;
             // 
             // lblSmsLeft
@@ -143,7 +148,7 @@
             this.lblSmsLeft.AutoSize = true;
             this.lblSmsLeft.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblSmsLeft.ForeColor = System.Drawing.Color.ForestGreen;
-            this.lblSmsLeft.Location = new System.Drawing.Point(114, 111);
+            this.lblSmsLeft.Location = new System.Drawing.Point(186, 111);
             this.lblSmsLeft.Name = "lblSmsLeft";
             this.lblSmsLeft.Size = new System.Drawing.Size(71, 18);
             this.lblSmsLeft.TabIndex = 6;
@@ -154,7 +159,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            this.label5.Location = new System.Drawing.Point(100, 231);
+            this.label5.Location = new System.Drawing.Point(186, 279);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 18);
             this.label5.TabIndex = 7;
@@ -164,17 +169,40 @@
             // 
             this.lblInputSize.AutoSize = true;
             this.lblInputSize.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblInputSize.Location = new System.Drawing.Point(12, 231);
+            this.lblInputSize.Location = new System.Drawing.Point(12, 279);
             this.lblInputSize.Name = "lblInputSize";
             this.lblInputSize.Size = new System.Drawing.Size(45, 18);
             this.lblInputSize.TabIndex = 8;
             this.lblInputSize.Text = "Input:";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label6.Location = new System.Drawing.Point(188, 331);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(101, 18);
+            this.label6.TabIndex = 9;
+            this.label6.Text = "SMS Cost:  146";
+            // 
+            // lblSmsCount
+            // 
+            this.lblSmsCount.AutoSize = true;
+            this.lblSmsCount.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSmsCount.Location = new System.Drawing.Point(12, 331);
+            this.lblSmsCount.Name = "lblSmsCount";
+            this.lblSmsCount.Size = new System.Drawing.Size(89, 18);
+            this.lblSmsCount.TabIndex = 10;
+            this.lblSmsCount.Text = "Will be sent: ";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(215, 354);
+            this.ClientSize = new System.Drawing.Size(301, 443);
+            this.Controls.Add(this.lblSmsCount);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.lblInputSize);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.lblSmsLeft);
@@ -213,6 +241,8 @@
         private System.Windows.Forms.Label lblSmsLeft;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label lblInputSize;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lblSmsCount;
     }
 }
 
