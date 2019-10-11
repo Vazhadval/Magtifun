@@ -142,6 +142,8 @@
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(277, 23);
             this.progressBar.TabIndex = 0;
+            this.progressBar.Step = 30;
+            this.progressBar.Maximum = 100;
             // 
             // lblSmsLeft
             // 
