@@ -13,7 +13,7 @@ namespace Magtifun2
         {
             InitializeComponent();
         }
-        
+
         private void btnSend_Click(object sender, EventArgs e)
         {
             progressBar.Maximum = 100;
@@ -40,10 +40,10 @@ namespace Magtifun2
                     using (ChromeDriver driver = new ChromeDriver(chromeDriverService, chromeOptions))
                     {
 
-                        LoginToMagtifun(txtUsername.Text, txtPassword.Text, driver, progressBar, lblSmsLeft);
+                        LoginToMagtifun(txtUsername.Text, txtPassword.Text, driver, progressBar, lblSmsLeft, txtMessage);
                         SendSMS(txtReceiver.Text, txtMessage.Text, driver, progressBar);
 
-                        
+
                         MessageBox.Show("Message sent successfully!", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                         progressBar.Value = 0;
@@ -65,7 +65,7 @@ namespace Magtifun2
 
 
 
-        static void LoginToMagtifun(string username, string password, IWebDriver driver, ProgressBar progressBar, Label smsLeftLabel)
+        static void LoginToMagtifun(string username, string password, IWebDriver driver, ProgressBar progressBar, Label smsLeftLabel, TextBox txtMessage)
         {
             driver.Navigate().GoToUrl("http://www.magtifun.ge/");
             progressBar.PerformStep();
@@ -75,7 +75,7 @@ namespace Magtifun2
             progressBar.PerformStep();
             driver.FindElement(By.CssSelector("input[type='submit']")).Click();
             progressBar.PerformStep();
-            smsLeftLabel.Text = "SMS Left: " + (Convert.ToInt32(driver.FindElement(By.CssSelector("span[class='xxlarge dark english']")).Text) - 1).ToString();
+            smsLeftLabel.Text = "SMS Left: " + (Convert.ToInt32(driver.FindElement(By.CssSelector("span[class='xxlarge dark english']")).Text) - Math.Ceiling(Convert.ToDecimal(txtMessage.Text.Length) / 146)).ToString();
             progressBar.PerformStep();
         }
         static void SendSMS(string receiver, string sms, IWebDriver driver, ProgressBar progressBar)
@@ -88,5 +88,9 @@ namespace Magtifun2
             progressBar.Value = 100;
         }
 
+        private void TxtMessage_TextChanged(object sender, EventArgs e)
+        {
+            lblInputSize.Text = $"Input: {txtMessage.Text.Length.ToString()}";
+        }
     }
 }

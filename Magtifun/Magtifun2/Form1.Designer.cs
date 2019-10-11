@@ -39,6 +39,8 @@
             this.txtMessage = new System.Windows.Forms.TextBox();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.lblSmsLeft = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.lblInputSize = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -61,9 +63,9 @@
             // 
             // btnSend
             // 
-            this.btnSend.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSend.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSend.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnSend.Location = new System.Drawing.Point(15, 254);
+            this.btnSend.Location = new System.Drawing.Point(15, 286);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(188, 54);
             this.btnSend.TabIndex = 5;
@@ -122,14 +124,16 @@
             // 
             this.txtMessage.Font = new System.Drawing.Font("Comic Sans MS", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMessage.Location = new System.Drawing.Point(15, 132);
+            this.txtMessage.MaxLength = 438;
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(188, 96);
             this.txtMessage.TabIndex = 4;
+            this.txtMessage.TextChanged += new System.EventHandler(this.TxtMessage_TextChanged);
             // 
             // progressBar
             // 
-            this.progressBar.Location = new System.Drawing.Point(15, 234);
+            this.progressBar.Location = new System.Drawing.Point(15, 266);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(188, 14);
             this.progressBar.TabIndex = 0;
@@ -145,11 +149,34 @@
             this.lblSmsLeft.TabIndex = 6;
             this.lblSmsLeft.Text = "SMS Left:";
             // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            this.label5.Location = new System.Drawing.Point(100, 231);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(103, 18);
+            this.label5.TabIndex = 7;
+            this.label5.Text = "Max Input: 438";
+            // 
+            // lblInputSize
+            // 
+            this.lblInputSize.AutoSize = true;
+            this.lblInputSize.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblInputSize.Location = new System.Drawing.Point(12, 231);
+            this.lblInputSize.Name = "lblInputSize";
+            this.lblInputSize.Size = new System.Drawing.Size(45, 18);
+            this.lblInputSize.TabIndex = 8;
+            this.lblInputSize.Text = "Input:";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(215, 323);
+            this.ClientSize = new System.Drawing.Size(215, 354);
+            this.Controls.Add(this.lblInputSize);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.lblSmsLeft);
             this.Controls.Add(this.progressBar);
             this.Controls.Add(this.txtMessage);
@@ -184,6 +211,8 @@
         private System.Windows.Forms.TextBox txtMessage;
         private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.Label lblSmsLeft;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lblInputSize;
     }
 }
 
