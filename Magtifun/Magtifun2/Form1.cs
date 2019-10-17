@@ -95,9 +95,13 @@ namespace Magtifun2
             {
                 lblSmsCount.Text = "Will be sent: 2 sms";
             }
-            else
+            else if(smsTextCharCount > 292)
             {
                 lblSmsCount.Text = "Will be sent: 3 sms";
+            }
+            else
+            {
+                lblSmsCount.Text = "Will be sent:";
             }
 
         }

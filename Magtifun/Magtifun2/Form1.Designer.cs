@@ -141,9 +141,8 @@
             this.progressBar.Location = new System.Drawing.Point(12, 352);
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(277, 23);
-            this.progressBar.TabIndex = 0;
             this.progressBar.Step = 30;
-            this.progressBar.Maximum = 100;
+            this.progressBar.TabIndex = 0;
             // 
             // lblSmsLeft
             // 
@@ -173,9 +172,9 @@
             this.lblInputSize.Font = new System.Drawing.Font("Comic Sans MS", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblInputSize.Location = new System.Drawing.Point(12, 279);
             this.lblInputSize.Name = "lblInputSize";
-            this.lblInputSize.Size = new System.Drawing.Size(45, 18);
+            this.lblInputSize.Size = new System.Drawing.Size(57, 18);
             this.lblInputSize.TabIndex = 8;
-            this.lblInputSize.Text = "Input:";
+            this.lblInputSize.Text = "Input: 0";
             // 
             // label6
             // 
