@@ -128,7 +128,7 @@
             // 
             this.txtMessage.Font = new System.Drawing.Font("Comic Sans MS", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMessage.Location = new System.Drawing.Point(15, 132);
-            this.txtMessage.MaxLength = 438;
+            this.txtMessage.MaxLength = 430;
             this.txtMessage.Multiline = true;
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
@@ -164,7 +164,7 @@
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(103, 18);
             this.label5.TabIndex = 7;
-            this.label5.Text = "Max Input: 438";
+            this.label5.Text = "Max Input: 430";
             // 
             // lblInputSize
             // 

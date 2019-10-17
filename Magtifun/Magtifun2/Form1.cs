@@ -87,17 +87,9 @@ namespace Magtifun2
             int smsTextCharCount = txtMessage.Text.Length;
             lblInputSize.Text = $"Input: {smsTextCharCount.ToString()}";
 
-            if (smsTextCharCount > 0 && smsTextCharCount <= 146)
+            if (smsTextCharCount > 0 && smsTextCharCount <= 430)
             {
-                lblSmsCount.Text = "Will be sent: 1 sms";
-            }
-            else if (smsTextCharCount > 146 && smsTextCharCount <= 292)
-            {
-                lblSmsCount.Text = "Will be sent: 2 sms";
-            }
-            else if(smsTextCharCount > 292)
-            {
-                lblSmsCount.Text = "Will be sent: 3 sms";
+                lblSmsCount.Text = $"Will be sent: {(smsTextCharCount+146) / 146} sms";
             }
             else
             {
