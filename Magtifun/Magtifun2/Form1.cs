@@ -2,13 +2,15 @@
 using OpenQA.Selenium.Chrome;
 using System;
 using System.Collections.Generic;
-
+using System.Configuration;
 using System.Windows.Forms;
 
 namespace Magtifun2
 {
     public partial class Form1 : Form
     {
+
+        private string _chromeDriverDirectory = ConfigurationManager.AppSettings["ChromeDirectory"];
         public Form1()
         {
             InitializeComponent();
@@ -32,15 +34,13 @@ namespace Magtifun2
                  "no-sandbox",
                  "headless",});
 
-                var chromeDriverService = ChromeDriverService.CreateDefaultService();
+                var chromeDriverService = ChromeDriverService.CreateDefaultService(_chromeDriverDirectory);
                 chromeDriverService.HideCommandPromptWindow = true;    // This is to hidden the console.
                 progressBar.PerformStep();
-
                 try
                 {
                     using (driver = new ChromeDriver(chromeDriverService, chromeOptions))
                     {
-
                         LoginToMagtifun(txtUsername.Text, txtPassword.Text, lblSmsLeft, txtMessage);
                         progressBar.PerformStep();
                         SendSMS(txtReceiver.Text, txtMessage.Text);
@@ -57,6 +57,10 @@ namespace Magtifun2
                     MessageBox.Show("Please make sure you filled all fields and credentials are correct", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     progressBar.Value = 0;
                     btnSend.Enabled = true;
+                }
+                finally
+                {
+                    driver.Quit();
                 }
             }
             else
@@ -95,7 +99,7 @@ namespace Magtifun2
             {
                 lblSmsCount.Text = "Will be sent: 2 sms";
             }
-            else if(smsTextCharCount > 292)
+            else if (smsTextCharCount > 292)
             {
                 lblSmsCount.Text = "Will be sent: 3 sms";
             }
